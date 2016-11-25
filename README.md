@@ -4,11 +4,9 @@ Work in progress HyperContainer API client for Node.js.
 
 ## Usage
 
-Install:
-
     npm install hyper-client --save
 
-Create a client:
+### Example: Creating  and starting a pod
 
     import Hyper from 'hyper'
 
@@ -16,9 +14,6 @@ Create a client:
       socketPath: '/var/run/hyper.sock'
     })
 
-### Example: Creating  and starting a pod
-
-    // Your Podfile
     let podfile = {
       id: 'hello-world-id',
       containers: [

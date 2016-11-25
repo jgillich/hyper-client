@@ -1,9 +1,10 @@
 {
   "name": "hyper-client",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepublish": "babel Hyper.js > index.js",
     "test": "tape -r babel-register tests/*.js"
   },
   "author": "",
