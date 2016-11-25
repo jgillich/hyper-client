@@ -7,7 +7,7 @@
     "prepublish": "babel Hyper.js > index.js",
     "test": "tape -r babel-register tests/*.js"
   },
-  "author": "",
+  "author": "Jakob Gillich <jakob@gillich.me>",
   "license": "ISC",
   "dependencies": {
     "docker-modem": "^0.3.2"
