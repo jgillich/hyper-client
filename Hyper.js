@@ -7,7 +7,83 @@ export default class Hyper {
   }
 
   createPod(opts, callback) {
+    var optsf = {
+      path: '/pod/create',
+      method: 'POST',
+      options: opts,
+      statusCodes: {
+        201: true,
+        500: 'server error'
+      }
+    };
 
+    this.modem.dial(optsf, function(err, data) {
+      callback(err, data);
+    });
+  }
+
+  startPod(opts, callback) {
+    var optsf = {
+      path: '/pod/start?',
+      method: 'POST',
+      options: opts,
+      statusCodes: {
+        200: true,
+        500: 'server error'
+      }
+    };
+
+    this.modem.dial(optsf, function(err, data) {
+      callback(err, data);
+    });
+  }
+
+  stopPod(opts, callback) {
+    var optsf = {
+      path: '/pod/stop?',
+      method: 'POST',
+      options: opts,
+      statusCodes: {
+        200: true,
+        500: 'server error'
+      }
+    };
+
+    this.modem.dial(optsf, function(err, data) {
+      callback(err, data);
+    });
+  }
+
+  deletePod(opts, callback) {
+    var optsf = {
+      path: '/pod?',
+      method: 'DELETE',
+      options: opts,
+      statusCodes: {
+        200: true,
+        500: 'server error'
+      }
+    };
+
+    this.modem.dial(optsf, function(err, data) {
+      callback(err, data);
+    });
+  }
+
+  createContainer(opts, callback) {
+    var optsf = {
+      path: '/container/create?',
+      method: 'POST',
+      options: opts,
+      statusCodes: {
+        201: true,
+        500: 'server error'
+      }
+    };
+
+    this.modem.dial(optsf, function(err, data) {
+      callback(err, data);
+    });
   }
 
   getContainers(callback) {
@@ -22,6 +98,7 @@ export default class Hyper {
     };
 
     this.modem.dial(optsf, function(err, data) {
+      if(err) return callback(err, data);
       callback(err, data.cData.map(parseContainer));
     });
   }
@@ -43,6 +120,7 @@ export default class Hyper {
     };
 
     this.modem.dial(optsf, function(err, data) {
+      if(err) return callback(err, data);
       callback(err, data.imagesList.map(parseImage));
     });
 
