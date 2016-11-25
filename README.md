@@ -8,7 +8,7 @@ Work in progress HyperContainer API client for Node.js.
 
 ### Example: Creating  and starting a pod
 
-    import Hyper from 'hyper'
+    import Hyper from 'hyper-client'
 
     let hyper = new Hyper({
       socketPath: '/var/run/hyper.sock'
