@@ -10,7 +10,7 @@
   "author": "Jakob Gillich <jakob@gillich.me>",
   "license": "ISC",
   "dependencies": {
-    "docker-modem": "^0.3.2"
+    "docker-modem": "^0.3.3"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
